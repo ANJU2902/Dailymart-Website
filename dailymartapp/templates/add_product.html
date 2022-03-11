@@ -1,0 +1,120 @@
+{% extends 'index.html' %}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+     <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">ADD DESTINATION</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="post" action="{% url 'getpro' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Product Name</label>
+                    <input name="pname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Product Name">
+                    <div>
+                      <label for="exampleInputPassword1">Select Category</label>
+                       <input name="category" type="text" value="{{i.category}}" class="form-control" id="exampleInputPassword1" placeholder="select category">
+                    <div class="form-group"> 
+                      <select>
+                        {% for i in data %}
+    
+                        <option value="{{i.name}}">{{i.name}} </option>
+    
+                        {% endfor %}
+    
+                      </select>
+                      </div>
+                    <label for="exampleInputPassword1">weight</label>
+                    <input name="weight" type="text" class="form-control" id="exampleInputPassword1" placeholder="weight">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Price</label>
+                    <input name="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="price">
+                  </div>
+                  <div class="form-group">
+                    <label style="height: 70%; width: 70%;" for="exampleInputFile">Image</label>
+                    <div class="input-group">
+                      <div>
+                        <input name="photo" type="file" id="exampleInputFile">
+                       </div>
+          
+                    </div>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- general form elements -->
+            
+              <!-- /.card-header -->
+              
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- Input addon -->
+           
+            <!-- /.card -->
+            <!-- Horizontal Form -->
+            
+            <!-- /.card -->
+
+          </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
+            <!-- Form Element sizes -->
+           
+            
+            
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+          
+            <!-- /.card -->
+
+            <!-- general form elements disabled -->
+            
+            <!-- /.card -->
+            <!-- general form elements disabled -->
+          
+            <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock %}
